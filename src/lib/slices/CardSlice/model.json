@@ -1,0 +1,98 @@
+{
+  "id": "front_slice",
+  "type": "SharedSlice",
+  "name": "CardSlice",
+  "description": "FrontSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cardtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cardparagraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cardlogo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Logo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cardsidetext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Side Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "card_social_media_link_1": {
+          "type": "Link",
+          "config": {
+            "label": "Card Social Media Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "card_social_media_link_2": {
+          "type": "Link",
+          "config": {
+            "label": "Card Social Media Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "card_social_media_link_3": {
+          "type": "Link",
+          "config": {
+            "label": "Card Social Media Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "carddatetext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Experience Date",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "carddate": {
+          "type": "Text",
+          "config": {
+            "label": "Card Experience Text",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

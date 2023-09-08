@@ -1,0 +1,6 @@
+{
+  "repositoryName": "your-tribe-profile-card-mcp",
+  "adapter": "@slicemachine/adapter-sveltekit",
+  "libraries": ["./src/lib/slices"],
+  "localSliceSimulatorURL": "http://localhost:5173/slice-simulator"
+}

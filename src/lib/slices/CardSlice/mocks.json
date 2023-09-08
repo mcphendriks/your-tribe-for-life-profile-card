@@ -1,0 +1,102 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"cardtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat amet proident fugiat culpa culpa occaecat sint. Magna sunt fugiat voluptate id minim. Mollit non consectetur ad enim commodo proident cupidatat ea ad ea nostrud consectetur enim."
+						}
+					}
+				]
+			},
+			"cardparagraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Court"
+						}
+					}
+				]
+			},
+			"cardlogo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem irure duis fugiat in incididunt sint id sint tempor ad do elit."
+						}
+					}
+				]
+			},
+			"cardsidetext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim ullamco dolore proident occaecat. Velit sint laborum et commodo officia sint incididunt eu incididunt tempor reprehenderit non ex qui."
+						}
+					}
+				]
+			},
+			"card_social_media_link_1": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"card_social_media_link_2": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"card_social_media_link_3": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"carddatetext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ex aliqua do fugiat deserunt elit eu aliqua ullamco est anim tempor enim mollit. Lorem irure deserunt dolor anim cupidatat exercitation consectetur qui sint ut minim veniam."
+									}
+								}
+							]
+						}
+					],
+					[
+						"carddate",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "including",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
