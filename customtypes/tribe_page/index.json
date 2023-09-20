@@ -1,6 +1,6 @@
 {
-  "id": "tribe",
-  "label": "tribe",
+  "id": "tribe_page",
+  "label": "Tribe Page",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -14,33 +14,32 @@
         }
       },
       "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
-      "hero_section": {
         "type": "StructuredText",
         "config": {
-          "label": "Hero Section",
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "header_text": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Header Text",
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "squads": {
-        "type": "Group",
-        "config": {
-          "label": "Squads",
-          "fields": {}
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "squad": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

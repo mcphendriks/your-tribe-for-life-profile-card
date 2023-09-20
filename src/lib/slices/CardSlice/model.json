@@ -30,19 +30,19 @@
             "single": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "cardlogo": {
+        "card_text": {
           "type": "StructuredText",
           "config": {
-            "label": "Card Logo",
+            "label": "Card Text",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "cardsidetext": {
+        "cardlogo": {
           "type": "StructuredText",
           "config": {
-            "label": "Card Side Text",
+            "label": "Card Logo",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

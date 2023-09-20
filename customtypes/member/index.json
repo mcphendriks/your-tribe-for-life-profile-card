@@ -1,0 +1,42 @@
+{
+  "id": "member",
+  "label": "Member",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "member_name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Member Name",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "member_image": {
+        "type": "Image",
+        "config": {
+          "label": "Member Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "member_link": {
+        "type": "Link",
+        "config": {
+          "label": "Member Link",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}

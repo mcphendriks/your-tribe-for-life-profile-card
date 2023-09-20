@@ -81,58 +81,46 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type MemberDocumentDataSlicesSlice = never;
-
 /**
- * Content for member documents
+ * Content for Member documents
  */
 interface MemberDocumentData {
   /**
-   * Slice Zone field in *member*
+   * Member Name field in *Member*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: member.slices[]
+   * - **API ID Path**: member.member_name
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  slices: prismic.SliceZone<MemberDocumentDataSlicesSlice>
-  /**
-   * Meta Description field in *member*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: member.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
+  member_name: prismic.RichTextField;
 
   /**
-   * Meta Image field in *member*
+   * Member Image field in *Member*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: member.meta_image
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: member.member_image
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never>;
+  member_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *member*
+   * Member Link field in *Member*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: member.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.member_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  meta_title: prismic.KeyTextField;
+  member_link: prismic.LinkField;
 }
 
 /**
- * member document from Prismic
+ * Member document from Prismic
  *
  * - **API ID**: `member`
  * - **Repeatable**: `true`
@@ -143,72 +131,84 @@ interface MemberDocumentData {
 export type MemberDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<MemberDocumentData>, "member", Lang>;
 
-type SquadsDocumentDataSlicesSlice = MembersSlice;
+type MemberPageDocumentDataSlicesSlice = never;
 
 /**
- * Content for squads documents
+ * Content for Member Page documents
  */
-interface SquadsDocumentData {
+interface MemberPageDocumentData {
   /**
-   * Title field in *squads*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: squads.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Hero Section field in *squads*
+   * Member Title field in *Member Page*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: squads.hero_section
+   * - **API ID Path**: member_page.member_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  hero_section: prismic.RichTextField;
+  member_title: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *squads*
+   * Member Header Text field in *Member Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member_page.member_header_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  member_header_text: prismic.RichTextField;
+
+  /**
+   * Member Button field in *Member Page*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: member_page.member_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  member_button: prismic.BooleanField;
+
+  /**
+   * Slice Zone field in *Member Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: squads.slices[]
+   * - **API ID Path**: member_page.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<SquadsDocumentDataSlicesSlice>
+  slices: prismic.SliceZone<MemberPageDocumentDataSlicesSlice>
   /**
-   * Meta Description field in *squads*
+   * Meta Description field in *Member Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: squads.meta_description
+   * - **API ID Path**: member_page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *squads*
+   * Meta Image field in *Member Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: squads.meta_image
+   * - **API ID Path**: member_page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *squads*
+   * Meta Title field in *Member Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: squads.meta_title
+   * - **API ID Path**: member_page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -216,99 +216,99 @@ interface SquadsDocumentData {
 }
 
 /**
- * squads document from Prismic
+ * Member Page document from Prismic
  *
- * - **API ID**: `squads`
+ * - **API ID**: `member_page`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SquadsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<SquadsDocumentData>, "squads", Lang>;
+export type MemberPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<MemberPageDocumentData>,
+    "member_page",
+    Lang
+  >;
+
+type SquadPageDocumentDataSlicesSlice = MemberSlice;
 
 /**
- * Item in *tribe → Squads*
+ * Content for Squad Page documents
  */
-export interface TribeDocumentDataSquadsItem {}
-
-type TribeDocumentDataSlicesSlice = never;
-
-/**
- * Content for tribe documents
- */
-interface TribeDocumentData {
+interface SquadPageDocumentData {
   /**
-   * Title field in *tribe*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: tribe.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Hero Section field in *tribe*
+   * Squad Title field in *Squad Page*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: tribe.hero_section
+   * - **API ID Path**: squad_page.squad_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  hero_section: prismic.RichTextField;
+  squad_title: prismic.RichTextField;
 
   /**
-   * Squads field in *tribe*
+   * Squad Header Text field in *Squad Page*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: tribe.squads[]
+   * - **API ID Path**: squad_page.squad_header_text
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  squads: prismic.GroupField<Simplify<TribeDocumentDataSquadsItem>>;
+  squad_header_text: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *tribe*
+   * Squad Button field in *Squad Page*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: squad_page.squad_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  squad_button: prismic.BooleanField;
+
+  /**
+   * Slice Zone field in *Squad Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: tribe.slices[]
+   * - **API ID Path**: squad_page.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<TribeDocumentDataSlicesSlice>
+  slices: prismic.SliceZone<SquadPageDocumentDataSlicesSlice>
   /**
-   * Meta Description field in *tribe*
+   * Meta Description field in *Squad Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: tribe.meta_description
+   * - **API ID Path**: squad_page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *tribe*
+   * Meta Image field in *Squad Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: tribe.meta_image
+   * - **API ID Path**: squad_page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *tribe*
+   * Meta Title field in *Squad Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: tribe.meta_title
+   * - **API ID Path**: squad_page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -316,22 +316,115 @@ interface TribeDocumentData {
 }
 
 /**
- * tribe document from Prismic
+ * Squad Page document from Prismic
  *
- * - **API ID**: `tribe`
+ * - **API ID**: `squad_page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SquadPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SquadPageDocumentData>,
+    "squad_page",
+    Lang
+  >;
+
+type TribePageDocumentDataSlicesSlice = SquadSlice;
+
+/**
+ * Content for Tribe Page documents
+ */
+interface TribePageDocumentData {
+  /**
+   * Title field in *Tribe Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tribe_page.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Header Text field in *Tribe Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tribe_page.header_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  header_text: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Tribe Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tribe_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TribePageDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Tribe Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: tribe_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Tribe Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tribe_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Tribe Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: tribe_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Tribe Page document from Prismic
+ *
+ * - **API ID**: `tribe_page`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type TribeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<TribeDocumentData>, "tribe", Lang>;
+export type TribePageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TribePageDocumentData>,
+    "tribe_page",
+    Lang
+  >;
 
 export type AllDocumentTypes =
   | HomepageDocument
   | MemberDocument
-  | SquadsDocument
-  | TribeDocument;
+  | MemberPageDocument
+  | SquadPageDocument
+  | TribePageDocument;
 
 /**
  * Primary content in *CardSlice → Primary*
@@ -358,6 +451,16 @@ export interface FrontSliceSliceDefaultPrimary {
   cardparagraph: prismic.RichTextField;
 
   /**
+   * Card Text field in *CardSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: front_slice.primary.card_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_text: prismic.RichTextField;
+
+  /**
    * Card Logo field in *CardSlice → Primary*
    *
    * - **Field Type**: Rich Text
@@ -366,16 +469,6 @@ export interface FrontSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   cardlogo: prismic.RichTextField;
-
-  /**
-   * Card Side Text field in *CardSlice → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: front_slice.primary.cardsidetext
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  cardsidetext: prismic.RichTextField;
 
   /**
    * Card Social Media Link field in *CardSlice → Primary*
@@ -464,35 +557,35 @@ export type FrontSliceSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Members → Primary*
+ * Primary content in *Members → Items*
  */
-export interface MembersSliceDefaultPrimary {
+export interface MemberSliceDefaultItem {
   /**
-   * Member Name field in *Members → Primary*
+   * Member Name field in *Members → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: members.primary.member_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: member.items[].member_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  member_name: prismic.KeyTextField;
+  member_name: prismic.RichTextField;
 
   /**
-   * Member Image field in *Members → Primary*
+   * Member Image field in *Members → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: members.primary.member_image
+   * - **API ID Path**: member.items[].member_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   member_image: prismic.ImageField<never>;
 
   /**
-   * Member Link field in *Members → Primary*
+   * Member Link field in *Members → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: members.primary.member_link
+   * - **API ID Path**: member.items[].member_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   member_link: prismic.LinkField;
@@ -505,28 +598,77 @@ export interface MembersSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type MembersSliceDefault = prismic.SharedSliceVariation<
+export type MemberSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<MembersSliceDefaultPrimary>,
-  never
+  Record<string, never>,
+  Simplify<MemberSliceDefaultItem>
 >;
 
 /**
  * Slice variation for *Members*
  */
-type MembersSliceVariation = MembersSliceDefault;
+type MemberSliceVariation = MemberSliceDefault;
 
 /**
  * Members Shared Slice
  *
- * - **API ID**: `members`
- * - **Description**: Members
+ * - **API ID**: `member`
+ * - **Description**: Member
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type MembersSlice = prismic.SharedSlice<
-  "members",
-  MembersSliceVariation
+export type MemberSlice = prismic.SharedSlice<"member", MemberSliceVariation>;
+
+/**
+ * Primary content in *Squad → Primary*
+ */
+export interface SquadSliceDefaultPrimary {
+  /**
+   * Squad Title field in *Squad → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: squad.primary.squad_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  squad_title: prismic.RichTextField;
+
+  /**
+   * Squad Group Text field in *Squad → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: squad.primary.squad_group_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  squad_group_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Squad Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SquadSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SquadSliceDefaultPrimary>,
+  never
 >;
+
+/**
+ * Slice variation for *Squad*
+ */
+type SquadSliceVariation = SquadSliceDefault;
+
+/**
+ * Squad Shared Slice
+ *
+ * - **API ID**: `squad`
+ * - **Description**: Squad
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SquadSlice = prismic.SharedSlice<"squad", SquadSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -543,24 +685,29 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlicesSlice,
       MemberDocument,
       MemberDocumentData,
-      MemberDocumentDataSlicesSlice,
-      SquadsDocument,
-      SquadsDocumentData,
-      SquadsDocumentDataSlicesSlice,
-      TribeDocument,
-      TribeDocumentData,
-      TribeDocumentDataSquadsItem,
-      TribeDocumentDataSlicesSlice,
+      MemberPageDocument,
+      MemberPageDocumentData,
+      MemberPageDocumentDataSlicesSlice,
+      SquadPageDocument,
+      SquadPageDocumentData,
+      SquadPageDocumentDataSlicesSlice,
+      TribePageDocument,
+      TribePageDocumentData,
+      TribePageDocumentDataSlicesSlice,
       AllDocumentTypes,
       FrontSliceSlice,
       FrontSliceSliceDefaultPrimary,
       FrontSliceSliceDefaultItem,
       FrontSliceSliceVariation,
       FrontSliceSliceDefault,
-      MembersSlice,
-      MembersSliceDefaultPrimary,
-      MembersSliceVariation,
-      MembersSliceDefault,
+      MemberSlice,
+      MemberSliceDefaultItem,
+      MemberSliceVariation,
+      MemberSliceDefault,
+      SquadSlice,
+      SquadSliceDefaultPrimary,
+      SquadSliceVariation,
+      SquadSliceDefault,
     };
   }
 }
