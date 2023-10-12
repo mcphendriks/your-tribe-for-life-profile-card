@@ -29,7 +29,7 @@
   id="card"
 >
   <section class="front cover">
-    <h2>{slice.primary.cardtitle[0].text}</h2>
+    <h1>{slice.primary.cardtitle[0].text}</h1>
     <p>{slice.primary.cardparagraph[0].text}</p>
     <p>{slice.primary.card_text[0].text}</p>
     <p>{slice.primary.cardlogo[0].text}</p>
